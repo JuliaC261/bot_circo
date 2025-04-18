@@ -16,45 +16,48 @@ async def on_ready():
 async def alma(ctx):
     opcoes = [
         {
-            "mensagem": "
-        "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
-        " \n"
-        "┄\n"
-        "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
-        "\n"
-        "***MEUS PARABÉNS!!!***\n"
-        "\n"
-        "**◎** *Sua Alma é uma **__Recém - Chegada__*!*\n"
-        "\n"
-        "> -# São aqueles que já acabaram de morrer e se despertaram nesse circo sem entender o que está acontecendo, [Sabia mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)",
+            "mensagem": (
+                "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
+                "\n"
+                "┄\n"
+                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\n"
+                "***MEUS PARABÉNS!!!***\n"
+                "\n"
+                "**◎** *Sua Alma é uma **__Recém - Chegada__*!*\n"
+                "\n"
+                "> -# São aqueles que já acabaram de morrer e se despertaram nesse circo sem entender o que está acontecendo, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
+            ),
             "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362921665071288420/729_Sem_Titulo_20250325150216.jpg?ex=68042736&is=6802d5b6&hm=5c764f3fb95c6fe692225934e73a8cd4d6256454ea7c70ba1a11705e822bee74&=&format=webp&width=1860&height=620"
         },
         {
-            "mensagem": "
-        "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
-        " \n"
-        "┄\n"
-        "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
-        "\n"
-        "***MEUS PARABÉNS!!!***\n"
-        "\n"
-        "**◎** *Sua Alma é uma **__Experiente__*!*\n"
-        "\n"
-        "> -# São aqueles que já passaram tempo suficiente no circo para compreender suas regras e horrores, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)",
+            "mensagem": (
+                "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
+                "\n"
+                "┄\n"
+                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\n"
+                "***MEUS PARABÉNS!!!***\n"
+                "\n"
+                "**◎** *Sua Alma é uma **__Experiente__*!*\n"
+                "\n"
+                "> -# São aqueles que já passaram tempo suficiente no circo para compreender suas regras e horrores, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
+            ),
             "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362921665071288420/729_Sem_Titulo_20250325150216.jpg?ex=68042736&is=6802d5b6&hm=5c764f3fb95c6fe692225934e73a8cd4d6256454ea7c70ba1a11705e822bee74&=&format=webp&width=1860&height=620"
         },
         {
-            "mensagem": "
-        "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
-        " \n"
-        "┄\n"
-        "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
-        "\n"
-        "***MEUS PARABÉNS!!!***\n"
-        "\n"
-        "**◎** *Sua Alma é uma **__Corrompida__*!*\n"
-        "\n"
-        "> Foram tomadas pelo medo, ganância ou desespero, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)",
+            "mensagem": (
+                "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
+                "\n"
+                "┄\n"
+                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\n"
+                "***MEUS PARABÉNS!!!***\n"
+                "\n"
+                "**◎** *Sua Alma é uma **__Corrompida__*!*\n"
+                "\n"
+                "> Foram tomadas pelo medo, ganância ou desespero, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
+            ),
             "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362922657175175219/729_Sem_Titulo3_20250418194750.jpg?ex=68042823&is=6802d6a3&hm=9431444d67d24d66324ea05d4279af6dec6c6560fcac7a6eec7f29eae3ed1011&=&format=webp&width=1860&height=620"
         },
     ]
