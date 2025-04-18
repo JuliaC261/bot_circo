@@ -21,11 +21,11 @@ async def alma(ctx):
                 "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
                 "\n"
                 "┄\n"
-                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\t\t**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
                 "\n"
-                "***MEUS PARABÉNS!!!***\n"
+                "\t\t***MEUS PARABÉNS!!!***\n"
                 "\n"
-                "**◎** *Sua Alma é uma **__Recém - Chegada__*!*\n"
+                "\t**◎** *Sua Alma é uma **__Recém - Chegada__*!*\n"
                 "\n"
                 "> -# São aqueles que já acabaram de morrer e se despertaram nesse circo sem entender o que está acontecendo, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
             ),
@@ -36,11 +36,11 @@ async def alma(ctx):
                 "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
                 "\n"
                 "┄\n"
-                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\t\t**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
                 "\n"
-                "***MEUS PARABÉNS!!!***\n"
+                "\t\t***MEUS PARABÉNS!!!***\n"
                 "\n"
-                "**◎** *Sua Alma é uma **__Experiente__*!*\n"
+                "\t**◎** *Sua Alma é uma **__Experiente__*!*\n"
                 "\n"
                 "> -# São aqueles que já passaram tempo suficiente no circo para compreender suas regras e horrores, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
             ),
@@ -51,13 +51,13 @@ async def alma(ctx):
                 "‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ ‎ ₊ ‎ ‎ ‎ ‎ ‎ ‎ ‎   ‎ ‎ ‎ 𓈒 ◌\n"
                 "\n"
                 "┄\n"
-                "**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
+                "\t\t**₊˚ ‿︵‿︵‿︵୨୧ · · :casinha: · · ୨୧‿︵‿︵‿︵ ˚₊**\n"
                 "\n"
-                "***MEUS PARABÉNS!!!***\n"
+                "\t\t***MEUS PARABÉNS!!!***\n"
                 "\n"
-                "**◎** *Sua Alma é uma **__Corrompida__*!*\n"
+                "\t**◎** *Sua Alma é uma **__Corrompida__*!*\n"
                 "\n"
-                "> Foram tomadas pelo medo, ganância ou desespero, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
+                "> -# Foram tomadas pelo medo, ganância ou desespero, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)"
             ),
             "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362922657175175219/729_Sem_Titulo3_20250418194750.jpg"
         },
@@ -68,7 +68,7 @@ async def alma(ctx):
     embed = discord.Embed(
         title="🕊️ Voz da Alma",
         description=escolha["mensagem"],
-        color=0x9b59b6
+        color=0x7e0e01
     )
     embed.set_image(url=escolha["imagem"])
     await ctx.send(embed=embed)
