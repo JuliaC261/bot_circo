@@ -63,7 +63,10 @@ async def alma(ctx):
         },
     ]
 
-    escolha = random.choice(opcoes)
+     # Defina os pesos: [Recém-Chegada, Experiente, Corrompida]
+    pesos = [60, 30, 10]  # ou qualquer outra proporção que você quiser
+
+    escolha = random.choices(opcoes, weights=pesos, k=1)[0]
 
     embed = discord.Embed(
         title=" ",
