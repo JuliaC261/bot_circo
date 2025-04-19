@@ -44,7 +44,7 @@ async def alma(ctx):
                 "\n"
                 "> -# *São aqueles que já passaram tempo suficiente no circo para compreender suas regras e horrores, [Saiba mais…](https://discordapp.com/channels/1352404572114653244/1354250241322516550)*"
             ),
-            "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362921665071288420/729_Sem_Titulo_20250325150216.jpg"
+            "imagem": "https://media.discordapp.net/attachments/1149801910895910912/1362921455716663417/729_Sem_Titulo_20250325170905.jpg?ex=68042704&is=6802d584&hm=5277f83cb25273eb00b9fb86fc8c9d84ebc0662cf91fe959b1ef22a36737caf2&=&format=webp&width=1860&height=620"
         },
         {
             "mensagem": (
