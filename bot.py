@@ -119,6 +119,29 @@ async def adicionar(ctx, *, args):
         await ctx.send("Erro ao adicionar função. Use o formato: `!adicionar Nome Da Função raridade`")
 
 @bot.command()
+async def remover(ctx, *, args):
+    try:
+        partes = args.rsplit(" ", 1)
+        nome = partes[0].strip()
+        raridade = partes[1].strip().lower()
+
+        if raridade not in pesos_raridade:
+            await ctx.send("Raridade inválida. Use: `comum`, `incomum`, ou `rara`.")
+            return
+
+        dados = carregar_funcoes()
+
+        if nome not in dados[raridade]:
+            await ctx.send(f"A função **{nome}** não existe na categoria **{raridade}**.")
+            return
+
+        dados[raridade].remove(nome)
+        salvar_funcoes(dados)
+        await ctx.send(f"Função **{nome}** removida com sucesso da categoria **{raridade}**!")
+    except Exception as e:
+        await ctx.send("Erro ao remover função. Use o formato: `!remover Nome Da Função raridade`")
+
+@bot.command()
 async def função(ctx):
     categorias = carregar_funcoes()
 
