@@ -88,7 +88,7 @@ async def função(ctx):
         "incomum": {
             "peso": 30,
             "funcoes": [
-                "Equilibrista", "Acrobata", "Contorcionista", "Pernas-De-Pau", "Tapezista", "Marionetista"
+                "Equilibrista", "Acrobata", "Contorcionista", "Pernas-De-Pau", "Trapezista", "Marionetista"
             ]
         },
         "rara": {
