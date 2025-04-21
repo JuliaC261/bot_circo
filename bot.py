@@ -115,7 +115,7 @@ async def função(ctx):
                 "\n"
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀***MEUS PARABÉNS!!!***\n"
                 "\n"
-                "⠀⠀⠀⠀**◎** *Sua Função é **__{funcao_escolhida}__***!*\n"
+                f"⠀⠀⠀⠀**◎** *Sua Função é **__{funcao_escolhida}__***!*\n"
                 "\n"
         "> -# ****[Saiba mais…](https://discord.com/channels/1352404572114653244/1353079696325349478)****"
     )
