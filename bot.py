@@ -1,10 +1,11 @@
 import discord
 from discord.ext import commands
 import random
-import os  # <--- Adicionado
+import os  
+import json # <--- Adicionado
 
 # Configuração do bot
-TOKEN = os.getenv("TOKEN")  # Certifique-se de ter configurado a variável de ambiente TOKEN
+TOKEN = os.getenv("TOKEN")  # COnfigurar variável TOKEN em variaveis globais no railway
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -76,38 +77,72 @@ async def alma(ctx):
     embed.set_image(url=escolha["imagem"])
     await ctx.send(embed=embed)
 
+pesos_raridade = {
+    "comum": 60,
+    "incomum": 30,
+    "rara": 10
+}
+
+# Carregar funções do JSON
+def carregar_funcoes():
+    if not os.path.exists("funcoes.json"):
+        with open("funcoes.json", "w") as f:
+            json.dump({"comum": [], "incomum": [], "rara": []}, f)
+    with open("funcoes.json", "r") as f:
+        return json.load(f)
+
+# Salvar funções no JSON
+def salvar_funcoes(dados):
+    with open("funcoes.json", "w") as f:
+        json.dump(dados, f, indent=4)
+
+@bot.command()
+async def adicionar(ctx, *, args):
+    try:
+        partes = args.rsplit(" ", 1)
+        nome = partes[0].strip()
+        raridade = partes[1].strip().lower()
+        
+        if raridade not in pesos_raridade:
+            await ctx.send("Raridade inválida. Use: `comum`, `incomum`, ou `rara`.")
+            return
+        
+        dados = carregar_funcoes()
+        if nome in dados[raridade]:
+            await ctx.send(f"A função **{nome}** já existe na categoria **{raridade}**!")
+            return
+        
+        dados[raridade].append(nome)
+        salvar_funcoes(dados)
+        await ctx.send(f"Função **{nome}** adicionada com sucesso como **{raridade}**!")
+    except Exception as e:
+        await ctx.send("Erro ao adicionar função. Use o formato: `!adicionar Nome Da Função raridade`")
+
 @bot.command()
 async def função(ctx):
-    categorias = {
-        "comum": {
-            "peso": 60,
-            "funcoes": [
-                "Palhaço", "Malabarista", "Monociclista", "Cantor", "Dançarino", "Mímico", "Ator"
-            ]
-        },
-        "incomum": {
-            "peso": 30,
-            "funcoes": [
-                "Equilibrista", "Acrobata", "Contorcionista", "Pernas-De-Pau", "Trapezista", "Marionetista"
-            ]
-        },
-        "rara": {
-            "peso": 10,
-            "funcoes": [
-                "Mágico", "Dominador de Animais", "Engolidor de Espadas", "Faquir", "Fortão"
-            ]
-        }
-    }
+    categorias = carregar_funcoes()
 
-    # 1. Escolher a categoria com base nos pesos
+    # Garantir que tem funções em pelo menos uma categoria
+    todas_vazias = all(len(funcoes) == 0 for funcoes in categorias.values())
+    if todas_vazias:
+        await ctx.send("Nenhuma função cadastrada ainda!")
+        return
+
     nomes_categorias = list(categorias.keys())
-    pesos_categorias = [categorias[cat]["peso"] for cat in nomes_categorias]
+    pesos_categorias = [pesos_raridade[cat] for cat in nomes_categorias]
+
+    # Escolher uma categoria com base no peso
     categoria_escolhida = random.choices(nomes_categorias, weights=pesos_categorias, k=1)[0]
 
-    # 2. Escolher uma função dentro da categoria sorteada
-    funcao_escolhida = random.choice(categorias[categoria_escolhida]["funcoes"])
+    # Se a categoria estiver vazia, escolher uma com funções
+    while not categorias[categoria_escolhida]:
+        categoria_escolhida = random.choice([
+            cat for cat in nomes_categorias if categorias[cat]
+        ])
 
-    # 3. Mensagem padrão com a função escolhida
+    funcao_escolhida = random.choice(categorias[categoria_escolhida])
+
+    # Mensagem padrão com a função escolhida
     mensagem = (
                 "ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ౨ৎㅤㅤㅤㅤㅤㅤㅤㅤ₊ㅤㅤㅤㅤㅤㅤㅤㅤ𓈒 ◌\n"
                 "┄\n"
@@ -122,15 +157,9 @@ async def função(ctx):
 
     imagem = "https://media.discordapp.net/attachments/1149801910895910912/1363672072471056475/A4H1Wk1U4BCeAAAAAElFTkSuQmCC.png"
 
-    # 4. Criar embed
-    embed = discord.Embed(
-        title=" ",
-        description=mensagem,
-        color=0x7e0e01
-    )
+    # Criar embed
+    embed = discord.Embed(title=" ", description=mensagem, color=0x7e0e01)
     embed.set_image(url=imagem)
-
-    # 5. Enviar
     await ctx.send(embed=embed)
 
 # Inicia o bot
