@@ -115,9 +115,9 @@ async def função(ctx):
                 "\n"
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀***MEUS PARABÉNS!!!***\n"
                 "\n"
-                "⠀⠀⠀⠀**◎** *Sua Alma é uma **__{funcao_escolhida}__***!*\n"
+                "⠀⠀⠀⠀**◎** *Sua Função é **__{funcao_escolhida}__***!*\n"
                 "\n"
-        "> -# ****[Saiba mais…](https://discord.com/channels/1352404572114653244/1354451156071612596)****"
+        "> -# ****[Saiba mais…](https://discord.com/channels/1352404572114653244/1353079696325349478)****"
     )
 
     imagem = "https://media.discordapp.net/attachments/1149801910895910912/1363672072471056475/A4H1Wk1U4BCeAAAAAElFTkSuQmCC.png"
