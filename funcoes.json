@@ -1,0 +1,5 @@
+{
+  "comum": ["Palhaço", "Malabarista", "Monociclista", "Cantor", "Dançarino", "Mímico", "Ator"],
+  "incomum": ["Equilibrista", "Acrobata", "Contorcionista", "Pernas-De-Pau", "Trapezista", "Marionetista"],
+  "rara": ["Mágico", "Dominador de Animais", "Engolidor de Espadas", "Faquir", "Fortão"]
+}
