@@ -63,8 +63,8 @@ async def alma(ctx):
         },
     ]
 
-     # Defina os pesos: [Recém-Chegada, Experiente, Corrompida]
-    pesos = [60, 30, 10]  # ou qualquer outra proporção que você quiser
+    
+    pesos = [60, 30, 10]  
 
     escolha = random.choices(opcoes, weights=pesos, k=1)[0]
 
@@ -76,39 +76,59 @@ async def alma(ctx):
     embed.set_image(url=escolha["imagem"])
     await ctx.send(embed=embed)
 
-# Ative esta função depois se quiser usá-la (remova os três aspas):
-"""
 @bot.command()
 async def função(ctx):
-    opcoes = [
-        {
-            "mensagem": "A alma sussurra verdades antigas...",
-            "imagem": "https://exemplo.com/imagem-alma1.jpg"
+    categorias = {
+        "comum": {
+            "peso": 60,
+            "funcoes": [
+                "Palhaço", "Malabarista", "Monociclista", "Cantor", "Dançarino", "Mímico", "Ator"
+            ]
         },
-        {
-            "mensagem": "Você escuta o eco da alma.",
-            "imagem": "https://exemplo.com/imagem-alma2.jpg"
+        "incomum": {
+            "peso": 30,
+            "funcoes": [
+                "Equilibrista", "Acrobata", "Contorcionista", "Pernas-De-Pau", "Tapezista", "Marionetista"
+            ]
         },
-        {
-            "mensagem": "A alma responde em silêncio profundo.",
-            "imagem": "https://exemplo.com/imagem-alma3.jpg"
-        },
-        {
-            "mensagem": "Fragmentos de alma se manifestam.",
-            "imagem": "https://exemplo.com/imagem-alma4.jpg"
-        },
-    ]
+        "rara": {
+            "peso": 10,
+            "funcoes": [
+                "Mágico", "Dominador de Animais", "Engolidor de Espadas", "Faquir", "Fortão"
+            ]
+        }
+    }
 
-    escolha = random.choice(opcoes)
+    # 1. Escolher a categoria com base nos pesos
+    nomes_categorias = list(categorias.keys())
+    pesos_categorias = [categorias[cat]["peso"] for cat in nomes_categorias]
+    categoria_escolhida = random.choices(nomes_categorias, weights=pesos_categorias, k=1)[0]
 
-    embed = discord.Embed(
-        title="⚙️ Função Executada",
-        description=escolha["mensagem"],
-        color=0x3498db
+    # 2. Escolher uma função dentro da categoria sorteada
+    funcao_escolhida = random.choice(categorias[categoria_escolhida]["funcoes"])
+
+    # 3. Mensagem padrão com a função escolhida
+    mensagem = (
+        "‎                                    ౨ৎ   ₊ 𓈒 ◌\n"
+        "                      ┄          ┄\n"
+        "⠀⠀⠀⠀⠀**₊˚ ‿︵‿︵‿︵୨୧ · · ⭐ · · ୨୧‿︵‿︵‿︵ ˚₊**\n\n"
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀***MEUS PARABÉNS!!!***\n\n"
+        f"⠀⠀⠀⠀ **◎** *Sua Função é  **__{funcao_escolhida}__**!*\n"
+        "> -# ****[Saiba mais…](https://discord.com/channels/1352404572114653244/1354451156071612596)****"
     )
-    embed.set_image(url=escolha["imagem"])
+
+    imagem = "https://media.discordapp.net/attachments/1149801910895910912/1363672072471056475/A4H1Wk1U4BCeAAAAAElFTkSuQmCC.png"
+
+    # 4. Criar embed
+    embed = discord.Embed(
+        title=" ",
+        description=mensagem,
+        color=0x7e0e01
+    )
+    embed.set_image(url=imagem)
+
+    # 5. Enviar
     await ctx.send(embed=embed)
-"""
 
 # Inicia o bot
 bot.run(TOKEN)
